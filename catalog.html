@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог - Книжная полка</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>МАГАЗИН КНИГ</h1>
+
+    <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="catalog.html">Каталог</a></li>
+    </ul>
+
+    <hr>
+
+    <h2>Каталог книг</h2>
+
+    <div class="filter-section">
+        <button class="filter-btn" onclick="filterBooks('all')">Все книги</button>
+        <button class="filter-btn" onclick="filterBooks('roman')">Роман</button>
+        <button class="filter-btn" onclick="filterBooks('drama')">Психологическая драма</button>
+        <button class="filter-btn" onclick="filterBooks('antiutopia')">Антиутопия</button>
+    </div>
+
+    <div id="book1" class="book-item" data-category="roman">
+        <h3>Мастер и Маргарита</h3>
+        <img src="https://avatars.mds.yandex.net/get-mpic/12263081/2a000001920e85a708e768b31f35339919b7/orig" alt="Мастер и Маргарита" width="150" height="200">
+        <br>
+        <a href="item1.html">Подробнее о книге</a>
+        <br>
+        <p><strong>Цена: 599 руб.</strong></p>
+        <button onclick="addToCart(1)" style="padding: 8px 15px; margin: 5px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer;">Добавить в корзину</button>
+    </div>
+
+
+    <div id="book2" class="book-item" data-category="drama">
+        <h3>Преступление и наказание</h3>
+        <img src="https://avatars.mds.yandex.net/get-entity_search/2050844/2g0NE8FE18jU/S600xU_2x" alt="Преступление и наказание" width="150" height="200">
+        <br>
+        <a href="item2.html">Подробнее о книге</a>
+        <br>
+        <p><strong>Цена: 699 руб.</strong></p>
+        <button onclick="addToCart(2)" style="padding: 8px 15px; margin: 5px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer;">Добавить в корзину</button>
+    </div>
+
+
+    <div id="book3" class="book-item" data-category="antiutopia">
+        <h3>1984</h3>
+        <img src="https://avatars.mds.yandex.net/i?id=2b37ea2fa890a2710c7273fc026781fe7c3efba4-4854935-images-thumbs&n=13" alt="1984" width="150" height="200">
+        <br>
+        <a href="item3.html">Подробнее о книге</a>
+        <br>
+        <p><strong>Цена: 549 руб.</strong></p>
+        <button onclick="addToCart(3)" style="padding: 8px 15px; margin: 5px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer;">Добавить в корзину</button>
+    </div>
+
+    <br><br>
+
+    <hr>
+
+    <div class="cart-section">
+        <h3>Корзина</h3>
+        <div id="cart"></div>
+        <div id="total" style="font-weight: bold; margin: 10px 0;">Итого: 0 руб.</div>
+        <button id="pay-btn" onclick="pay()">Оплатить</button>
+        <button id="clear-cart" onclick="clearCart()">Очистить корзину</button>
+    </div>
+
+    <hr>
+
+    <p>&copy; 2026 Магазин книг. Все права защищены.</p>
+
+    <script src="script.js"></script>
+</body>
+</html>
