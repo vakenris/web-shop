@@ -1,5 +1,11 @@
 let cart = [];
 
+const savedCart = localStorage.getItem("cart");
+if (savedCart) {
+    cart = JSON.parse(savedCart);
+    document.addEventListener('DOMContentLoaded', showCart);
+}
+
 let booksData = {
     1: { name: "Мастер и Маргарита", price: 599 },
     2: { name: "Преступление и наказание", price: 699 },
@@ -42,12 +48,14 @@ const addToCart = (bookId) => {
     };
     cart.push(product);
     showCart();
+    localStorage.setItem("cart", JSON.stringify(cart));
     alert(`${booksData[bookId].name} добавлена в корзину!`);
 };
 
 const removeFromCart = (index) => {
     cart.splice(index, 1);
     showCart();
+    localStorage.setItem("cart", JSON.stringify(cart));
 };
 
 const filterBooks = (category) => {
@@ -77,6 +85,7 @@ const filterBooks = (category) => {
 const clearCart = () => {
     cart = [];
     showCart();
+    localStorage.setItem("cart", JSON.stringify(cart));
 };
 
 const pay = () => {
@@ -86,5 +95,6 @@ const pay = () => {
         alert('Покупка прошла успешно! Спасибо за заказ.');
         cart = [];
         showCart();
+        localStorage.setItem("cart", JSON.stringify(cart));
     }
 };
